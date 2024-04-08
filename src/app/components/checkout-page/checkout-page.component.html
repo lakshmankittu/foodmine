@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="content">
+    <h1>Order Form</h1>
+    <form [formGroup]="checkoutForm">
+      Name : <input type="text" name="name"   formControlName="name" >
+           <input-validation [control]="checkoutForm.controls['name']" [showErrorsWhen]="checkoutForm.invalid"></input-validation>
+      Address : <input type="text" name="address"   formControlName="address" >
+           <input-validation [control]="checkoutForm.controls['address']" [showErrorsWhen]="checkoutForm.invalid"></input-validation>
+    </form>
+    <order-items-list [order]="order"></order-items-list>
+  </div>
+
+ 
+  <div class="buttons-container">
+    <div class="buttons">
+      <button (click)="createOrder()">
+        Go To Payment
+      </button>
+    </div>
+  </div>
+
+</div>

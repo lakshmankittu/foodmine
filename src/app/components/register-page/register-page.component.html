@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="details">
+      <h1 title="Register"></h1>
+      <form [formGroup]="registerForm" (ngSubmit)="submit()">
+         Name : <br><input
+        label="Name"
+        formControlName="name"
+        >
+        <input-validation [control]="registerForm.controls['name']" [showErrorsWhen]="isSubmitted"></input-validation>
+
+        <br>
+      Email : 
+      <br><input
+      label="Email"
+      type="email"
+      formControlName="email"
+      >
+      <input-validation [control]="registerForm.controls['email']" [showErrorsWhen]="isSubmitted"></input-validation>
+
+    <br>  
+   Password :
+   <br> <input
+    label="Password"
+    type="password"
+    formControlName="password"
+    >
+    <input-validation [control]="registerForm.controls['password']" [showErrorsWhen]="isSubmitted"></input-validation>
+
+ <br>
+  Confirm Password : <br>
+  <input
+  label="Confirm Password"
+  type="password"
+  formControlName="confirmPassword"
+  >
+  <input-validation [control]="registerForm.controls['confirmPassword']" [showErrorsWhen]="isSubmitted"></input-validation>
+
+  <br>
+  Address : 
+  <br>
+  <input
+  label="Address"
+  name="address"
+  formControlName="address"
+  >
+  <input-validation [control]="registerForm.controls['address']" [showErrorsWhen]="isSubmitted"></input-validation>
+
+  <br>
+  <button name="Register">Register</button>
+  
+  <div class="login">
+    Already a user? &nbsp;
+    <a routerLink="/login" >
+      Login Here
+    </a>
+  </div>
+  
+  
+      </form>
+    </div>
+  </div>
+  
