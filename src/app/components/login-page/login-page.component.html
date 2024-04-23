@@ -4,7 +4,7 @@
             Email : <input type="text" name="email"   formControlName="email" >
            <input-validation [control]="formgroup.controls.email" [showErrorsWhen]="isSubmitted"></input-validation>
             <br><br>
-            Password : <input type="text" name="password" formControlName="password"  >
+            Password : <input type="password" name="password" formControlName="password"  >
             <input-validation [control]="formgroup.controls.password" [showErrorsWhen]="isSubmitted"></input-validation>
             <br><br>
            <button (click)="show()">Submit</button>

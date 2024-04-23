@@ -7,3 +7,9 @@ export class User{
     isAdmin!:boolean;
   }
   
+export class Authresult{
+  token!:string;
+  result!:boolean;
+  errors!:[];
+  user!:User;
+} 

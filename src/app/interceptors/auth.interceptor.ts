@@ -17,16 +17,16 @@ export class AuthInterceptor implements HttpInterceptor {
   
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     
-     this.userService.userObservable.subscribe((data)=>this.user=data);
-    if(this.user.id)
-    {
+    
+    const jwtToken = localStorage.getItem("Token");
+
+    if (jwtToken) {
       request = request.clone({
-        setHeaders:{
-          userid: this.user.id
+        setHeaders: {
+          Authorization: `Bearer ${jwtToken}`
         }
-      })
+      });
     }
-    console.log(request);
     return next.handle(request);
   }
 }

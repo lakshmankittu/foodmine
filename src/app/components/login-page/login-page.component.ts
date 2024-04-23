@@ -43,10 +43,13 @@ formgroup = new FormGroup({
     this.isSubmitted = true;
     if (this.formgroup.valid) {      
        this.userService.login({email:this.formgroup.value.email?.toString(),
-       password: this.formgroup.value.password?.toString()}).subscribe(() => {
+       password: this.formgroup.value.password?.toString()}).subscribe((data) => {
+        if(data.result){
          this.router.navigateByUrl(this.returnUrl);
+        }
+         this.formgroup.reset();
        });
-      this.formgroup.reset();
+      
     } else {
       console.log('Invalid ', "Error:", this.formgroup.get('username')?.['errors']);
     }
